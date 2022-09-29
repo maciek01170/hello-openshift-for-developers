@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 )
@@ -11,7 +12,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	if len(response) == 0 {
 		response = "Hello World!"
 	}
-
+	log.Println("response = " + response)
 	fmt.Fprintln(w, response)
 	fmt.Println("Servicing an impatient beginner's request.")
 }
